@@ -4,7 +4,7 @@ import { SectionHeading } from '../ui/SectionHeading'
 
 function CodeCard() {
   return (
-    <div className="rounded-2xl border border-[var(--color-border)] bg-[rgba(0,0,0,0.20)] p-6 shadow-[0_16px_60px_rgba(0,0,0,0.35)]">
+    <div className="min-w-0 rounded-2xl border border-[var(--color-border)] bg-[rgba(0,0,0,0.20)] p-6 shadow-[0_16px_60px_rgba(0,0,0,0.35)]">
       <div className="flex items-center gap-2">
         <span className="h-2.5 w-2.5 rounded-full bg-[rgba(248,250,252,0.20)]" />
         <span className="h-2.5 w-2.5 rounded-full bg-[rgba(248,250,252,0.16)]" />
@@ -12,7 +12,7 @@ function CodeCard() {
         <span className="ml-3 text-xs text-[var(--color-muted)]">about.ts</span>
       </div>
 
-      <pre className="mt-5 overflow-x-auto font-mono text-xs leading-6 text-[rgba(248,250,252,0.78)]">
+      <pre className="mt-5 max-w-full whitespace-pre-wrap break-words font-mono text-xs leading-6 text-[rgba(248,250,252,0.78)]">
         <code>
 {`export const profile = {
   name: "${profile.name}",
@@ -29,13 +29,10 @@ function CodeCard() {
 export function AboutSection() {
   return (
     <SectionContainer id="about">
-      <SectionHeading
-        title="About"
-        subtitle="Sobre mí."
-      />
+      <SectionHeading title="About" subtitle="Sobre mí." />
 
       <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
-        <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
+        <div className="min-w-0 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
           <p className="text-sm leading-7 text-[var(--color-muted)]">
             Soy <span className="font-semibold text-[var(--color-text)]">{profile.name}</span>,{' '}
             {profile.role}. Construyo productos web con foco en{' '}
@@ -53,14 +50,17 @@ export function AboutSection() {
             <span className="font-semibold text-[var(--color-text)]">
               crecer y seguir aprendiendo
             </span>
-            , aportar analisis y{' '}
+            , aportar análisis y{' '}
             <span className="font-semibold text-[var(--color-text)]">
               soluciones
             </span>{' '}
             dentro del desarrollo de software.
           </p>
         </div>
-        <CodeCard />
+
+        <div className="min-w-0">
+          <CodeCard />
+        </div>
       </div>
     </SectionContainer>
   )

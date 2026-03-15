@@ -50,7 +50,6 @@ function ProjectPreview({ project }: { project: Project }) {
     )
   }
 
-  // Placeholder “dev-themed” cuando no hay imagen
   return (
     <div className="relative h-44 overflow-hidden rounded-2xl border border-[rgba(148,163,184,0.18)] bg-[rgba(0,0,0,0.18)]">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(250,204,21,0.38),transparent_55%)]" />
@@ -87,13 +86,11 @@ export function ProjectCard({ project, index, animateIn }: ProjectCardProps) {
       ].join(' ')}
       style={{ transitionDelay: animateIn ? `${delayMs}ms` : '0ms' }}
     >
-      {/* glow on hover */}
       <div className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition group-hover:opacity-100">
         <div className="absolute inset-0 rounded-3xl bg-[radial-gradient(circle_at_25%_15%,rgba(250,204,21,0.20),transparent_60%)]" />
       </div>
 
       <div className="relative flex flex-col gap-5">
-        {/* Preview */}
         <ProjectPreview project={project} />
 
         {/* Header */}

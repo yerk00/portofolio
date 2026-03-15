@@ -1,4 +1,3 @@
-import { useMemo } from 'react'
 import { useTypewriter } from '../../hooks/useTypewriter'
 
 interface TypewriterOptions {
@@ -14,7 +13,7 @@ interface TypewriterTextProps {
   options?: TypewriterOptions
   className?: string
   caretClassName?: string
-  reserveSpace?: boolean
+  singleLine?: boolean
 }
 
 export function TypewriterText({
@@ -22,38 +21,28 @@ export function TypewriterText({
   options,
   className = '',
   caretClassName = '',
-  reserveSpace = true,
+  singleLine = false,
 }: TypewriterTextProps) {
   const { displayed } = useTypewriter({ texts, ...(options ?? {}) })
 
-  const longestText = useMemo(() => {
-    return texts.reduce((max, t) => (t.length > max.length ? t : max), '')
-  }, [texts])
-
-
   return (
-    <span className={reserveSpace ? 'inline-grid align-baseline' : 'inline'}>
-      {reserveSpace ? (
-        <span className="invisible whitespace-nowrap">{longestText}</span>
-      ) : null}
-
+    <span
+      className={[
+        'max-w-full',
+        singleLine ? 'whitespace-nowrap' : 'whitespace-normal break-words',
+        className,
+      ].join(' ')}
+    >
+      {displayed}
       <span
         className={[
-          reserveSpace ? 'col-start-1 row-start-1 whitespace-nowrap' : 'whitespace-nowrap',
-          className,
+          'ml-1 inline-block w-[10px] translate-y-[1px] bg-[var(--color-accent)]',
+          'animate-[pulse_1.3s_ease-in-out_infinite]',
+          caretClassName,
         ].join(' ')}
+        aria-hidden="true"
       >
-        {displayed}
-        <span
-          className={[
-            'ml-1 inline-block w-[10px] translate-y-[1px] bg-[var(--color-accent)]',
-            'animate-[pulse_1.3s_ease-in-out_infinite]',
-            caretClassName,
-          ].join(' ')}
-          aria-hidden="true"
-        >
-          &nbsp;
-        </span>
+        &nbsp;
       </span>
     </span>
   )

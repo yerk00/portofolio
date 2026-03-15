@@ -9,7 +9,8 @@ export function Tag({ label, className }: TagProps) {
   return (
     <span
       className={classNames(
-        'inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-700',
+        'inline-flex max-w-full items-center rounded-full border px-3 py-1 text-xs font-medium',
+        'border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-text)]',
         className,
       )}
     >

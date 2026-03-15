@@ -32,7 +32,7 @@ export function ProjectsSection() {
 
       <div
         ref={ref}
-        className="mt-8 grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(320px,1fr))]"
+        className="mt-8 grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(min(20rem,100%),1fr))]"
       >
         {sortedProjects.map((project, index) => (
           <ProjectCard

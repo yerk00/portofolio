@@ -16,7 +16,7 @@ type NavItem = {
 const NAV_ITEMS: NavItem[] = [
   { label: 'Home', href: '#top' },
   { label: 'Portfolio', href: '#projects' },
-  { label: 'Services', href: '#services' },
+  { label: 'Skills', href: '#skills' },
   { label: 'About', href: '#about' },
   { label: 'Contact', href: '#contact' },
 ]
@@ -31,7 +31,7 @@ interface SocialIconLinkProps {
 }
 
 /**
- * Componente reutilizable para mostrar iconos de redes sociales
+ * Componente reutilizable para mostrar iconos de las redes sociales
  * con un enlace externo
  */
 function SocialIconLink({ label, href, children }: SocialIconLinkProps) {
@@ -98,14 +98,14 @@ export function Navbar() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--color-border)] bg-[rgba(0,0,0,0.22)] backdrop-blur">
+    <header className="sticky top-0 z-50 relative overflow-x-clip border-b border-[var(--color-border)] bg-[rgba(0,0,0,0.22)] backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
 
         {/* logo dev */}
-        <a href="#top" className="flex items-center gap-3 font-semibold tracking-tight">
-          <span className="text-[var(--color-accent)]">{'<C/>'}</span>
-          <span>Dev</span>
-        </a>
+        <a href="#top" className="min-w-0 flex items-center gap-3 font-semibold tracking-tight">
+    <span className="shrink-0 text-[var(--color-accent)]">{'<C/>'}</span>
+    <span className="min-w-0 truncate">Dev</span>
+  </a>
 
         <nav className="hidden items-center gap-8 text-sm md:flex">
           {NAV_ITEMS.map((item) => (
