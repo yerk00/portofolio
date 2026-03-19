@@ -135,13 +135,6 @@ export function HeroSection() {
 
           <div className="mt-10 flex flex-wrap items-center gap-6">
             <a
-              href="/cv.pdf"
-              className="rounded-md border border-[var(--color-accent)] px-6 py-3 text-sm font-medium text-[var(--color-accent)] transition hover:bg-[rgba(255,255,255,0.06)]"
-            >
-              View my CV
-            </a>
-
-            <a
               href="#contact"
               className="text-sm font-medium text-[var(--color-accent)] hover:underline"
             >
