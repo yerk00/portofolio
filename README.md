@@ -8,7 +8,3 @@ Portfolio personal construido con **React + TypeScript + Vite + Tailwind**.
 - UI dark dev-themed
 - Responsive
 
-## Getting Started
-```bash
-npm install
-npm run dev

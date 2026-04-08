@@ -96,7 +96,7 @@ export function HeroSection() {
           </p>
 
           <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-[var(--color-text)] sm:text-5xl lg:text-6xl">
-            Hello <br />
+            Hello :) <br />
             Im{' '}
             <span className="text-[var(--color-accent)]">
               {profile.name.split(' ')[0]}
